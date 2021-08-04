@@ -11,6 +11,6 @@ class NotesViewModelFactory(
     val notesRepository: NotesRepository
 ):ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-       return NotesViewModel(app,notesRepository) as T
+       return NotesViewModel(app,notesRepository) as  T
     }
 }
