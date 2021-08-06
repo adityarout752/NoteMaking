@@ -8,6 +8,7 @@ import com.example.notesapp.db.NotesEntity
 import com.example.notesapp.repository.NotesRepository
 import kotlinx.coroutines.launch
 
+
 class NotesViewModel(app: Application, val notesRepository: NotesRepository):AndroidViewModel(app) {
 
 

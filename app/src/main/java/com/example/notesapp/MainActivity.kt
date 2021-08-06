@@ -1,7 +1,9 @@
 package com.example.notesapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import androidx.lifecycle.ViewModelProvider
 import com.example.notesapp.databinding.ActivityMainBinding
 import com.example.notesapp.db.NotesDb
@@ -12,7 +14,7 @@ import com.example.notesapp.viewModel.NotesViewModelFactory
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding:ActivityMainBinding
-    private lateinit var notesViewModel: NotesViewModel
+    lateinit var notesViewModel: NotesViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
@@ -20,6 +22,10 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         SetUpViewModel()
     }
+
+   
+
+
     fun SetUpViewModel(){
         val notesRepository=NotesRepository(NotesDb(this))
         val viewModelProviderFactory =
